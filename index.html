@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrakMax - Online Exam Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <main class="app-shell">
+    <header class="top-header">
+      <h1>CrakMax</h1>
+      <p class="subtitle">Practice smart. Attempt confidently.</p>
+    </header>
+
+    <section id="selection-view" class="card active-view">
+      <h2>Select Which Year Question Paper Do You Want To Practice</h2>
+      <label for="year-select" class="field-label">Select The Year Of Question Paper</label>
+      <select id="year-select" class="year-select">
+        <option value="">-- Select --</option>
+      </select>
+
+      <label for="subject-select" class="field-label">Select Subject To Practice</label>
+      <select id="subject-select" class="year-select">
+        <option value="All Subjects">All Subjects</option>
+        <option value="Mathematics">Maths</option>
+        <option value="Physics">Physics</option>
+        <option value="Chemistry">Chemistry</option>
+      </select>
+
+      <button id="start-btn" class="btn btn-primary" disabled>Start Exam</button>
+      <p class="helper-text">Choose a year and click Start Exam.</p>
+    </section>
+
+    <section id="exam-view" class="card hidden">
+      <div class="exam-head">
+        <h2 id="exam-title">Question Paper</h2>
+        <span id="progress-chip" class="chip">0 / 0 Answered</span>
+      </div>
+
+      <div class="exam-tools">
+        <div id="subject-tabs" class="subject-tabs"></div>
+        <div id="question-nav" class="question-nav"></div>
+      </div>
+
+      <form id="exam-form"></form>
+
+      <div class="exam-actions">
+        <button id="back-btn" class="btn btn-light" type="button">Back To Year Selection</button>
+      </div>
+
+      <div class="submit-fixed-wrap">
+        <div id="pending-chip" class="pending-chip">Pending: 0</div>
+        <button id="submit-exam-btn" class="btn btn-submit-fixed" type="button">Submit Exam</button>
+      </div>
+    </section>
+
+    <section id="result-view" class="card hidden">
+      <h2>Final Report</h2>
+      <div class="score-box">
+        <p class="score-label">Your Score</p>
+        <p id="score-text" class="score-value">0 / 0</p>
+      </div>
+
+      <button id="toggle-details-btn" class="btn btn-secondary" type="button">Show Attempt Details</button>
+      <div id="details-panel" class="details-panel hidden"></div>
+
+      <button id="restart-btn" class="btn btn-light" type="button">Practice Another Paper</button>
+    </section>
+  </main>
+
+  <script src="data/question-papers.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

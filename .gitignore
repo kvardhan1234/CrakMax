@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+
+# Temporary OCR/debug artifacts
+ocr_page_*.png
+page_*_dbg.png
+page_*.png
+tmp_*.png
+var_*.png
+
+# Local extraction scratch data
+extracted_images/
+QPK_27th_MAY_SHIFT_1_extracted.txt
+QPK_27th_MAY_SHIFT_1_pymupdf.txt
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
