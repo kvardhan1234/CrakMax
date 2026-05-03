@@ -5,7 +5,11 @@ const fallbackPapers = {
   }
 };
 
-const questionPapers = window.CRAKMAX_PAPERS || fallbackPapers;
+const questionPapers = {
+  ...fallbackPapers,
+  ...(window.CRAKMAX_PAPERS || {}),
+  ...(window.CRAKMAX_PAPERS_2024 || {})
+};
 
 const selectionView = document.getElementById("selection-view");
 const examView = document.getElementById("exam-view");
